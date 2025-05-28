@@ -4,10 +4,246 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Css</title>
+    <title>Microsoft Css</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 10px 20px;
+      }
+
+      :root {
+        --primary-color: #217AC1;
+        --commonTransition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        padding-right: 20px;
+      }
+
+      a {
+        color: rgb(114, 113, 113);
+        font-size: 15px;
+        text-decoration: none;
+        padding-left: 15px;
+      }
+
+      a:hover {
+        text-decoration: underline 1px solid;
+        text-underline-offset: 5px;
+      }
+
+      .icon {
+        padding-right: 20px;
+      }
+
+      .dis-section {
+        height: 450px;
+        background-image: url('assets/showcase.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 10px 0;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        padding-bottom: 100px;
+      }
+
+      .dis-info {
+        text-align: center;
+      }
+
+      .dis-info p {
+        margin: 15px 0;
+      }
+
+      .btn {
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .prod-section {
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .prod-info p {
+        margin: 10px 0;
+      }
+
+      .learn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--primary-color);
+
+
+      }
+
+      .learn p:hover {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .learn p {
+        transition: var(--commonTransition);
+      }
+
+      img {
+        width: 100%;
+      }
+
+      @media(max-width: 600px) {
+        .right {
+          display: none;
+        }
+      }
+
+      @media(max-width: 400px) {
+        .left {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
 
   <body>
+
+
+    <header>
+
+      <div class="left">
+        <div class="logo">
+          <img style="height: 22px; width: 100px;" src="assets/logo.png" alt="">
+        </div>
+        <nav>
+          <a href="">Office</a>
+          <a href="">Windows</a>
+          <a href="">Surface</a>
+          <a href="">Xbox</a>
+          <a href="">Deals</a>
+          <a href="">Support</a>
+        </nav>
+      </div>
+
+      <div class="right">
+        <i class="fa-solid fa-magnifying-glass icon"></i>
+        <i class="fa-solid fa-cart-shopping "></i>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="dis-section">
+        <div class="dis-info">
+          <h2>Surface Deals</h2>
+          <p>Select Surfaces are on sale now - save while supplies last </p>
+          <button class="btn">Shop Now <i class="fa-solid fa-chevron-right"></i></button>
+
+        </div>
+
+      </section>
+
+      <section class="prod-section">
+
+        <div class="product">
+          <img src="assets/card1.png" alt="">
+          <div class="prod-info">
+            <h2>New Surface Pro 7</h2>
+            <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play.</p>
+
+            <div class="learn">
+              <p>LEARN MORE</p>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="product">
+          <img src="assets/card2.png" alt="">
+          <div class="prod-info">
+            <h2>New Surface Pro 7</h2>
+            <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play.</p>
+
+            <div class="learn">
+              <p>LEARN MORE</p>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="product">
+          <img src="assets/card3.png" alt="">
+          <div class="prod-info">
+            <h2>New Surface Pro 7</h2>
+            <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play.</p>
+
+            <div class="learn">
+              <p>LEARN MORE</p>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="product">
+          <img src="assets/card4.png" alt="">
+          <div class="prod-info">
+            <h2>New Surface Pro 7</h2>
+            <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play.</p>
+
+            <div class="learn">
+              <p>LEARN MORE</p>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+      </section>
+
+    </main>
+
+    <script>
+      const rev = ScrollReveal();
+      rev.reveal('.left', { delay: 200, distance: '50px', origin: 'left' });
+      rev.reveal('.right', { delay: 200, distance: '50px', origin: 'right' });
+      rev.reveal('.product', { delay: 200, origin: 'left', interval: 200 });
+    </script>
 
   </body>
 
