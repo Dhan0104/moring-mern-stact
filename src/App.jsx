@@ -3,6 +3,7 @@ import Home from "./pages/home/Home"
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import RootLayOut from "./components/RootLayOut";
+import Product from "./pages/products/Product";
 
 export default function App() {
 
@@ -14,6 +15,10 @@ export default function App() {
         {
           index: true,
           element: <Home />
+        },
+        {
+          path: 'product/:id',
+          element: <Product />
         },
         {
           path: 'about',

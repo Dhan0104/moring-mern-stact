@@ -1,3 +1,4 @@
+import ProductList from "../products/ProductList";
 
 export default function Home() {
 
@@ -7,8 +8,7 @@ export default function Home() {
     <div>
 
 
-      <h1>Hello jee</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus voluptatibus necessitatibus nisi nam ex modi quia ipsa minus quibusdam facere, illo quos blanditiis, architecto doloribus, neque saepe inventore ducimus.</p>
+      <ProductList />
 
     </div>
   )
