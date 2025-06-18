@@ -17,10 +17,6 @@ export default function App() {
           element: <Home />
         },
         {
-          path: 'product/:id',
-          element: <Product />
-        },
-        {
           path: 'about',
           element: <About />
         },
