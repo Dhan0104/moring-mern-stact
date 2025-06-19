@@ -16,6 +16,14 @@ export default function Home() {
 
 
 
+      <select name="" id="">
+        <option value="" hidden disabled selected>Select Your Country</option>
+        <option value="">India</option>
+        <option value="">China</option>
+      </select>
+      <br />
+      <br />
+
 
 
     </div>

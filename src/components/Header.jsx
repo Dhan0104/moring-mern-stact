@@ -6,7 +6,7 @@ export default function Header() {
       <h1>Gourmet au Catering</h1>
 
       <nav className="space-x-2">
-        <NavLink className={'hover:bg-gray-300 px-5 py-2'}>About</NavLink>
+        <a href='#about' className={'hover:bg-gray-300 px-5 py-2'}>About</a>
         <NavLink className={'hover:bg-gray-300 px-5 py-2'}>Menu</NavLink>
         <NavLink className={'hover:bg-gray-300 px-5 py-2'}>Contact</NavLink>
       </nav>
