@@ -1,18 +1,19 @@
 import React from "react";
 import Header from "../../components/header";
 import { NavLink, Outlet } from "react-router";
+import Display from "./Display";
+import About from "../about/About";
+import Menu from "../Menu/Menu";
 export default function Home() {
   return (
     <div>
 
 
-     <Header />
-     <h1 className="font-bold">this is homepage</h1>
-     <nav className="space-x-5">
-      <NavLink to={'/page1'}>page1</NavLink>
-      <NavLink to={'/page2'}>page2</NavLink>
-      </nav>
-      <Outlet />
+   <Display />
+   <main className="px-[100px] py-[[100px]">
+   <About />
+   <Menu />
+  </main>
     </div>
     
   )}
