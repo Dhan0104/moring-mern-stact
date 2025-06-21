@@ -1,20 +1,16 @@
-import React from 'react'
-import {NavLink} from 'react-router'
+import { NavLink } from "react-router";
+
 export default function Header() {
   return (
-    <div className='flex shadow-lg px-5 py-4 justify-between justify-end>'>
-     
-        <h1> Gourmet au Catering</h1>
-        <nav className='space-x-5'>
-       <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/Menu">Menu</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-         
-         
-         
-        </nav>
+    <div className="flex shadow-lg px-5 py-4 justify-between">
+      <h1>Gourmet au Catering</h1>
+
+      <nav className="space-x-2">
+        <a href='#about' className={'hover:bg-gray-300 px-5 py-2'}>About</a>
+        <NavLink className={'hover:bg-gray-300 px-5 py-2'}>Menu</NavLink>
+        <NavLink className={'hover:bg-gray-300 px-5 py-2'}>Contact</NavLink>
+      </nav>
 
     </div>
-  )}
-
+  )
+}

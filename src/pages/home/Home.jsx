@@ -1,19 +1,31 @@
-import React from "react";
-import Header from "../../components/header";
-import { NavLink, Outlet } from "react-router";
-import Display from "./Display";
 import About from "../about/About";
-import Menu from "../Menu/Menu";
+import Display from "./Display";
+
 export default function Home() {
+
+
+
   return (
     <div>
 
+      <Display />
+      <main className="px-[100px] py-[70px]">
+        <About />
 
-   <Display />
-   <main className="px-[100px] py-[[100px]">
-   <About />
-   <Menu />
-  </main>
+      </main>
+
+
+
+      <select name="" id="">
+        <option value="" hidden disabled selected>Select Your Country</option>
+        <option value="">India</option>
+        <option value="">China</option>
+      </select>
+      <br />
+      <br />
+
+
+
     </div>
-    
-  )}
+  )
+}
