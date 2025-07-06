@@ -15,7 +15,7 @@ export default function MealItems() {
       });
       setData(response.data);
     } catch (err) {
-      console.log(err);
+
     }
   }
   useEffect(() => {
