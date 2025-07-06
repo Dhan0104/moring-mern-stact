@@ -1,9 +1,12 @@
-import { Avatar, Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react';
+import { Avatar, Card, List, Typography } from '@material-tailwind/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import MealCategoryLoader from './MealCategoryLoader';
+import { useNavigate } from 'react-router';
 
 export default function MealCategory() {
+
+  const nav = useNavigate();
 
   const [data, setData] = useState();
   const [load, setLoad] = useState(false);
@@ -37,8 +40,9 @@ export default function MealCategory() {
         <Card className='p-5'>
           <List>
             {data && data.categories.map((category) => {
-              return <div key={category.idCategory} className='space-y-3 mb-5'>
-
+              return <div
+                onClick={() => nav(`/mealCategory/${category.strCategory}`)}
+                key={category.idCategory} className='space-y-3 mb-5 cursor-pointer'>
                 <div className='flex items-center gap-4'>
                   <Avatar variant="circular" size='xl' alt="candice" src={category.strCategoryThumb} />
                   <Typography variant="h6" color="blue-gray">
