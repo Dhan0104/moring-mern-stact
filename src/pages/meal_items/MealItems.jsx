@@ -23,11 +23,11 @@ export default function MealItems() {
   }, []);
 
 
-
+  console.log(data);
 
 
   return (
-    <div className="p-5 grid grid-cols-3 gap-5">
+    <div className="p-10 grid grid-cols-4 gap-7">
 
       {data && data.meals.map((meal) => {
         return <MealItemCard key={meal.idMeal} meal={meal} />

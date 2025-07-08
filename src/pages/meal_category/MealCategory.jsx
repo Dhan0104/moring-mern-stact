@@ -39,7 +39,7 @@ export default function MealCategory() {
       {data &&
         <Card className='p-5'>
           <List>
-            {data && data.categories.map((category) => {
+            {data.categories.map((category) => {
               return <div
                 onClick={() => nav(`/mealCategory/${category.strCategory}`)}
                 key={category.idCategory} className='space-y-3 mb-5 cursor-pointer'>
