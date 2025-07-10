@@ -1,29 +1,19 @@
 import { Typography } from "@material-tailwind/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
+
 import { useParams } from "react-router"
+import { useApi } from "../../hooks/useApi";
 
 export default function Meal() {
-  const [data, setData] = useState();
+
   const { id } = useParams();
-  const getData = async () => {
-    try {
-      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/lookup.php', {
-        params: {
-          i: id
-        }
-      });
-      setData(response.data);
-    } catch (err) {
+  const [load, data, err] = useApi('https://www.themealdb.com/api/json/v1/1/lookup.php', {
+    i: id
+  });
 
-    }
-  }
+  if (load) return <h1>Loading....</h1>
+  if (err) return <h1>{err}</h1>
 
-  useEffect(() => {
-    getData();
-  }, [])
 
-  console.log(data);
   return (
     <div className="p-5">
       {data && data.meals.map((meal) => {
