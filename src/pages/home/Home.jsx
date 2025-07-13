@@ -1,73 +1,106 @@
-import { Button, Option, Select } from "@material-tailwind/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router"
+import { Button, Checkbox, Input, Option, Radio, Select, Switch, Typography } from "@material-tailwind/react";
+import { Formik } from "formik";
 
 export default function Home() {
-
-  const [data, setData] = useState();
-  const [load, setLoad] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const getData = async () => {
-    setLoad(true);
-    try {
-      const response = await axios.get(`https://dummyjson.com/products`, {
-        params: {
-          sortBy: searchParams.get('sortBy'),
-          order: searchParams.get('order')
-        }
-      })
-      setData(response.data);
-      setLoad(false);
-    } catch (err) {
-      setLoad(false);
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    getData();
-  }, [searchParams]);
-
-
-  if (load) return <h1>Loading....</h1>
-
-
   return (
     <div className="p-5">
 
+      <Formik
+        initialValues={{
+          username: '',
+          email: '',
+          habits: [],
+          gender: '',
+          country: '',
+          accept: ''
+        }}
 
-      <div className="flex max-w-[300px] gap-7 mb-5">
-        <Select
-          onChange={(e) => setSearchParams({ sortBy: e })}
-          label="Select Field">
-          <Option value="title">Title</Option>
-          <Option value="stock">Stock</Option>
-        </Select>
+        onSubmit={(val, { resetForm }) => {
+          console.log(val);
+          resetForm();
 
-        <Select
-          onChange={(e) => setSearchParams({ order: e })}
-          label="Select Field">
-          <Option value="asc">Ascending</Option>
-          <Option value="desc">Desc</Option>
-        </Select>
-      </div>
+        }}
+      >
 
+        {({ handleChange, setFieldValue, handleSubmit, values }) => (
+          <form onSubmit={handleSubmit} className="max-w-[350px] space-y-5">
 
-
-
-
-      <div className="grid grid-cols-4 gap-5">
-        {data && data.products.map((item, index) => {
-          return (
-            <div key={index}>
-              <h1>{item.title}</h1>
-              <img className="h-[200px]" src={item.thumbnail} alt="" />
+            <div>
+              <Input
+                onChange={handleChange}
+                value={values.username}
+                label="Username" name="username" />
             </div>
-          )
-        })}
-      </div>
+            <div>
+              <Input
+                value={values.email}
+                onChange={handleChange}
+                label="Email" name="email" />
+            </div>
+
+            <div>
+              <Typography>Select your habits</Typography>
+              <Checkbox
+                onChange={handleChange}
+                label='Dancing'
+                value={'dancing'}
+                name="habits"
+              />
+              <Checkbox
+                onChange={handleChange}
+                label='Singing'
+                value={'singing'}
+                name="habits" />
+            </div>
+
+            <div>
+              <Typography>Select your Gender</Typography>
+              <Radio
+                onChange={handleChange}
+                label='Male'
+                value={'male'}
+                color="blue"
+                name="gender"
+              />
+              <Radio
+                onChange={handleChange}
+                label='Female'
+                color="pink"
+
+                value={'female'}
+                name="gender" />
+            </div>
+
+            <div>
+              <Select
+
+                onChange={(e) => setFieldValue('country', e)}
+                name="country"
+                label="Select Country">
+                <Option value="India">India</Option>
+                <Option value="china">China</Option>
+                <Option value="Nepal">Nepal</Option>
+
+              </Select>
+            </div>
+
+            <div>
+              <Switch
+                onChange={handleChange}
+                name="accept"
+                label='Accept Terms and Condition' />
+            </div>
+
+            <Button type="submit">Submit</Button>
+
+          </form>
+        )}
+
+
+      </Formik>
+
+
+
 
 
     </div>
