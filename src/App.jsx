@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
-import Home from "./pages/home/Home"
 import RootLayOut from "./components/RootLayOut";
+import UserList from "./features/users/UserList";
+import UserForm from "./features/users/UserForm";
 
 
 export default function App() {
@@ -12,8 +13,12 @@ export default function App() {
       children: [
         {
           index: true,
-          element: <Home />
+          element: <UserList />
         },
+        {
+          path: 'add-user',
+          element: <UserForm />
+        }
 
       ]
     },
