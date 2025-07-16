@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 import RootLayOut from "./components/RootLayOut";
 import UserList from "./features/users/UserList";
 import UserForm from "./features/users/UserForm";
+import UpdateForm from "./features/users/UpdateForm";
 
 
 export default function App() {
@@ -18,6 +19,10 @@ export default function App() {
         {
           path: 'add-user',
           element: <UserForm />
+        },
+        {
+          path: 'update-user/:id',
+          element: <UpdateForm />
         }
 
       ]
