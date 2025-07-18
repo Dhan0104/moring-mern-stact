@@ -13,7 +13,8 @@ export const blogApi = createApi({
       query: () => ({
         url: '/blogs',
         method: 'GET'
-      })
+      }),
+      providesTags: ['Blogs']
 
     }),
 
@@ -22,7 +23,8 @@ export const blogApi = createApi({
         url: '/blogs',
         body: data,
         method: 'POST'
-      })
+      }),
+      invalidatesTags: ['Blogs']
     })
 
 

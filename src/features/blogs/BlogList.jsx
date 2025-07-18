@@ -16,9 +16,9 @@ export default function BlogList() {
     <div className="p-5">
       {/* <Button onClick={() => func()} >Click Me</Button> */}
       {data && data.map((blog) => {
-        return <div key={blog.id}>
-          <h1>{blog.title}</h1>
-          <p>{blog.detail}</p>
+        return <div key={blog.id} className="mb-6 shadow p-2">
+          <h1 className="text-xl font-semibold">{blog.title}</h1>
+          <p className="text-gray-800 italic">{blog.detail}</p>
         </div>
       })}
 
