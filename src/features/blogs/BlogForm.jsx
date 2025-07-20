@@ -5,7 +5,7 @@ import { useAddBlogMutation } from "./blogApi";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
-const valSchema = Yup.object({
+export const valSchema = Yup.object({
   title: Yup.string().min(10).max(100).required(),
   detail: Yup.string().min(20).max(500).required()
 });
@@ -27,7 +27,6 @@ export default function BlogForm() {
             toast.success('Blog added successfully');
             nav(-1);
           } catch (err) {
-
             toast.error('Failed to add blog. Please try again.');
           }
         }}
