@@ -1,9 +1,8 @@
 import BlogList from "../../components/BlogList";
-import { useGetNowPlayingQuery } from "../../shared/movieApi"
-import SearchInput from "../search/SearchInput";
+import { useGetUpcomingQuery } from "../../shared/movieApi";
 
-export default function NowPlaying() {
-  const { data, error, isLoading } = useGetNowPlayingQuery();
+export default function Upcoming() {
+  const { data, error, isLoading } = useGetUpcomingQuery();
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -11,8 +10,6 @@ export default function NowPlaying() {
 
   return (
     <div>
-
-      <SearchInput isNav={true} />
 
       {data && <BlogList movies={data.results} />}
 
