@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import RootLayOut from "./components/RootLayOut";
+import NowPlaying from "./features/now_playing/NowPlaying";
 
 export default function App() {
 
@@ -10,6 +11,7 @@ export default function App() {
       children: [
         {
           index: true,
+          element: <NowPlaying />
 
         },
       ]
