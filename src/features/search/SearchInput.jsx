@@ -2,7 +2,7 @@ import { Button, Input } from "@material-tailwind/react";
 import { Formik } from "formik";
 import { useNavigate, useSearchParams } from "react-router";
 
-export default function SearchInput({ isNav }) {
+export default function SearchInput({ isNav, setSearchParams }) {
 
   const nav = useNavigate();
   return (
@@ -12,8 +12,12 @@ export default function SearchInput({ isNav }) {
           query: ''
         }}
         onSubmit={(val, { resetForm }) => {
+          if (isNav) {
+            nav(`/movie-search/?query=${val.query}`)
+          } else {
+            setSearchParams({ query: val.query });
+          }
 
-          nav(`/movie-search/${val.query}`)
           resetForm();
         }}
       >
