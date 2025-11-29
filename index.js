@@ -4,7 +4,7 @@ import userRoutes from './routes/userRoutes.js';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import fileUpload from 'express-fileupload';
-
+import cor from 'cors';
 
 const app=express();
 const port=5000;
@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
   console.log(req.body);
   return res.status(200).json({message: 'welcome to back end'});
 });
-
+app.use(cor());
 app.use(productRoutes);
 app.use('/users',userRoutes);
 app.listen (port,()=>{
